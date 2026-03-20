@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornelia Manda | Portfolio | Home Page</title>
+     <!-- Made by: Cornelia Manda, December 10th, 2025 for GBDA228--> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet"> 
+    <!-- asked claude to give me the href for the google font's playfair display & roboto, it wasn't working when I linked it not sure why, very useful thank you claude --> 
+   
+    <style>
+        /* the global reset & typography choices */
+        * {
+            box-sizing: border-box; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #E0E2DF; 
+        }
+
+        h1, h2, h3, a, th {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* layout - the 1200px centered container  */
+        .container {
+            max-width: 1200px; /* */
+            margin: 0 auto;    
+            padding: 0; 
+            background-color: #E0E2DF; 
+            min-height: 100vh;
+            /* I was to upgrade my code for viewport accessibility, and researching discovered vh, so it takes up the whole screen*/
+            position: relative; 
+        }
+
+        /* navigation area  */
+        header {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+            background-color: #DDBDBE; 
+            padding: 17px 60px; 
+        }
+
+        /* it's just my name in the corner but ideally i want it to be a logo, just not at that stage yet!*/
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 1.5em;
+            font-weight: 400; 
+            letter-spacing: 1px;
+            color: #655C5B; 
+        }
+
+        nav ul {
+            list-style: none; /* */
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        nav li {
+            display: inline-block; /* */
+            margin-left: 40px;
+        }
+
+        nav a {
+            text-decoration: none; /* */
+            color: #655C5B; 
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+          /* i wanted more feedback for the user, so i did my research on how i could and i asked claude how i could do it and asked for an explanation*/
+        }
+
+        /* home link white as it's on that page already */
+        nav li:first-child a {
+            color: white;
+        }
+
+        nav a:hover {
+            color: white; 
+            cursor: pointer;
+        }
+
+        /* headshot area/section  */
+        #headshot {
+            margin-top: 0; 
+            position: relative;
+        }
+
+        .headshot-image {
+            width: 1200px;
+            height: 1200px;
+            background-color: #E0E2DF; 
+            display: block;
+            opacity: 0.8; 
+        }
+
+        /* overlay content container wrap  */
+        .overlay-container {
+            position: absolute; /* */
+            top: 33%; 
+            left: 0;
+            right: 0; 
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* container wrapper so it can hold I'M and Cornelia Manda together so they aligned */
+        .content-wrapper {
+            position: relative;
+            width: fit-content; 
+        }
+
+        /* I'M rotated */
+        .rotated-text {
+            font-family: "Playfair Display", serif;
+            font-size: 5em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #fff; 
+            
+            position: absolute;
+            bottom: 100%; 
+            left: 0;      
+            
+            transform: rotate(90deg); /* 90 degree looks better than -90 */
+            transform-origin: bottom left;
+
+            margin-bottom: 180px; 
+            margin-left: 5px; 
+        }
+
+        /* the main title for my name */
+        .title-group {
+            color: #fff;
+            text-align: center; 
+        }
+
+        .title-group h1 {
+            font-size: 6.5em; 
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            white-space: nowrap; 
+        }
+
+        /* very necessary call to action button, view portfolio with a beautiful rotation so it matches my theme of rotate hehe */
+        .cta-button {
+            display: inline-block;
+            margin-top: 170px;
+            
+            padding: 25px 80px;
+            font-size: 2em; 
+            
+            background-color: #C99B9B; 
+            color: white;              
+            border: 2px solid #C99B9B; 
+            
+            text-decoration: none;
+            text-transform: capitalize; 
+            
+            font-family: "Playfair Display", serif;
+            font-weight: bold;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #816B6E; 
+            border-color: #816B6E;     
+            color: #fff;
+            transform: rotate(-2deg);
+            cursor: pointer;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 0; 
+            color: #655C5B;
+            font-size: 0.9em;
+            border-top: 1px solid #DDBDBE; 
+        }
+
+        /* footer in the table layout that asn instructions said */
+        .footer-table-wrapper {
+            display: flex; /* found this to be easier for my layout, makes more sense in my head */
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-table {
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .footer-table th {
+            color: #816B6E;
+            font-size: 1.1em;
+            padding: 5px 10px 5px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .footer-table th:not(:first-child) {
+            padding-left: 30px; 
+        }
+
+        .footer-table td {
+            padding: 5px 0;
+            font-family: "Roboto", sans-serif;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .footer-table a {
+            color: #655C5B;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .footer-table a:hover {
+            color: #816B6E;
+            border-bottom: 1px solid #816B6E;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.8em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo">Cornelia Manda</div>
+            <nav>
+                <ul>
+                    <li><a href="https://cornelia-manda.github.io/home/">Home</a></li>
+                    <li><a href="https://cornelia-manda.github.io/portfolio/">Portfolio</a></li>
+                    <li><a href="https://cornelia-manda.github.io/contact-aboutme/">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="headshot">
+            <img src="headshot.jpeg" 
+                 alt="Headshot of Cornelia Manda" 
+                 class="headshot-image">
+
+            <div class="overlay-container">
+                
+                <div class="content-wrapper">
+                    
+                    <div class="rotated-text">I'M</div>
+
+                    <div class="title-group">
+                        <h1>CORNELIA MANDA</h1>
+                        <a href="https://cornelia-manda.github.io/portfolio/" class="cta-button">View Portfolio</a>
+                    </div>
+                </div>
+
+            </div>
+           
+        </section>
+
+        <footer>
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                    <tr>
+                        <th>Email:</th>
+                        <td><a href="mailto:cmanda@uwaterloo.ca">cmanda@uwaterloo.ca</a></td>
+                        
+                        <th>School:</th>
+                        <td><a href="https://uwaterloo.ca/stratford-school-of-interaction-design-and-business/global-business-and-digital-arts" target="_blank">University of Waterloo</a></td>
+                        
+                        <th>Location:</th>
+                        <td>Kitchener-Waterloo, Ontario</td>
+                    </tr>
+                </table>
+            </div>
+          
+<!-- thought the copyight made my page look more professional-->
+            <p class="copyright">&copy; 2026 Cornelia Manda. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
