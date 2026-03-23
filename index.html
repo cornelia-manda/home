@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cornelia Manda | Portfolio | Home Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
     
     <style>
         /* Global Reset & Typography */
@@ -27,9 +27,9 @@
         }
 
         .container {
-            max-width: 1200px; margin: 0 auto;
-            background-color: #E0E2DF; min-height: 100vh;
-            position: relative; 
+            max-width: 1200px; margin: 0 auto;    
+            padding: 0; background-color: #E0E2DF; 
+            min-height: 100vh; position: relative; 
         }
 
         /* Navigation Area */
@@ -38,7 +38,16 @@
             align-items: center; background-color: #DDBDBE; 
             padding: 17px 60px; position: relative; z-index: 1000;
         }
-        .logo { font-size: 1.5em; letter-spacing: 1px; color: #655C5B; }
+
+        /* --- LOGO WEIGHT REDUCED --- */
+        .logo { 
+            font-family: "Playfair Display", serif !important; 
+            font-weight: 400; /* Changed from 700 to 400 */
+            font-size: 1.5em; 
+            letter-spacing: 1px; 
+            color: #655C5B; 
+        }
+
         nav ul { list-style: none; padding: 0; margin: 0; text-align: right; }
         nav li { display: inline-block; margin-left: 40px; position: relative; vertical-align: middle; }
         nav a { color: #655C5B !important; font-size: 1.1em; display: inline-block; padding: 10px 0; }
@@ -50,132 +59,110 @@
             min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
             z-index: 100; text-align: left; padding: 10px 0; top: 100%; left: 0; margin-top: -5px;
         }
-        .dropdown-content li { display: block; }
+        .dropdown-content li { display: block; margin: 0; }
         .dropdown-content a { color: #655C5B !important; padding: 12px 20px; display: block; font-size: 1.1em; }
         .dropdown-content a:hover { background-color: #E0E2DF; color: #816B6E !important; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* Headshot Area */
-        #headshot { margin-top: 0; position: relative; }
-        .headshot-image { width: 1200px; height: 1200px; background-color: #E0E2DF; display: block; opacity: 0.8; }
+        /* Headshot Area (850px Crop) */
+        #headshot {
+            margin-top: 0; position: relative;
+            height: 850px; 
+            overflow: hidden; background-color: #E0E2DF; 
+        }
+
+        .headshot-image {
+            width: 100%; max-width: 1200px; height: 100%;
+            object-fit: cover; object-position: top center; 
+            display: block; opacity: 0.8; margin: 0 auto;
+        }
+
         .overlay-container {
-            position: absolute; top: 33%; left: 0; right: 0; z-index: 10;
-            display: flex; justify-content: center;
+            position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+            z-index: 10; display: flex; justify-content: center;
+            align-items: center; 
         }
-        .content-wrapper { position: relative; width: fit-content; }
+
+        .content-wrapper {
+            position: relative; width: fit-content; 
+            transform: translateY(124px); 
+        }
+
         .rotated-text {
-            font-family: "Playfair Display", serif; font-size: 5em; font-weight: 700;
-            letter-spacing: 3px; color: #fff; position: absolute; bottom: 100%; left: 0;
-            transform: rotate(90deg); transform-origin: bottom left;
-            margin-bottom: 180px; margin-left: 5px; 
+            font-family: "Playfair Display", serif !important; 
+            font-size: 5em; font-weight: 700;
+            letter-spacing: 3px; color: #fff; position: absolute; bottom: 100%; 
+            left: 0; transform: rotate(90deg); transform-origin: bottom left;
+            margin-bottom: 140px; margin-left: 5px; 
         }
+
         .title-group { color: #fff; text-align: center; }
         .title-group h1 {
+            font-family: "Playfair Display", serif !important; 
+            font-weight: 700; 
             font-size: 6.5em; margin: 0; line-height: 1; letter-spacing: 2px;
             text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
             white-space: nowrap; 
         }
+
         .cta-button {
-            display: inline-block; margin-top: 170px; padding: 25px 80px;
+            display: inline-block; margin-top: 110px; padding: 25px 80px;
             font-size: 2em; background-color: #C99B9B; color: white !important;                
-            border: 2px solid #C99B9B; text-transform: capitalize; 
-            font-weight: bold; transition: all 0.4s ease;
+            border: 2px solid #C99B9B; text-decoration: none;
+            text-transform: capitalize; font-weight: bold; transition: all 0.4s ease;
         }
         .cta-button:hover { background-color: #816B6E; border-color: #816B6E; transform: rotate(-2deg); }
 
-        /* PHOTOGRAPHY THEMED 3D CARD */
+        /* Photography 3D Card Section */
         .intro-section {
-            padding: 120px 80px;
-            display: flex;
-            justify-content: center;
+            padding: 60px 80px 120px 80px;
+            display: flex; justify-content: center;
             background-color: #E0E2DF;
         }
 
         .intro-card {
-            background-color: #fff;
-            padding: 90px 80px;
-            max-width: 900px;
-            position: relative;
-            border-radius: 60px 10px 60px 10px;
-            box-shadow: 15px 15px 0px #816B6E;
-            text-align: left;
-            border-left: 8px solid #DDBDBE;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden; /* Clips the metadata details */
+            background-color: #fff; padding: 90px 80px; max-width: 950px;
+            position: relative; border-radius: 60px 10px 60px 10px;
+            box-shadow: 15px 15px 0px #816B6E; text-align: left;
+            border-left: 8px solid #DDBDBE; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
 
-        .intro-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: 25px 25px 0px #C99B9B;
-        }
+        .intro-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 25px 25px 0px #C99B9B; }
 
-        /* Photography Viewfinder Brackets */
-        .bracket {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgba(129, 107, 110, 0.3); /* Soft Deep Rose */
-            z-index: 5;
-        }
+        .bracket { position: absolute; width: 30px; height: 30px; border: 2px solid rgba(129, 107, 110, 0.3); z-index: 5; }
         .top-left { top: 30px; left: 30px; border-right: none; border-bottom: none; }
         .top-right { top: 30px; right: 30px; border-left: none; border-bottom: none; }
         .bottom-left { bottom: 30px; left: 30px; border-right: none; border-top: none; }
         .bottom-right { bottom: 30px; right: 30px; border-left: none; border-top: none; }
 
-        /* Camera Metadata Text */
         .camera-meta {
-            position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: "Roboto", sans-serif;
-            font-size: 0.7em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #C99B9B;
-            opacity: 0.6;
+            position: absolute; top: 25px; left: 50%; transform: translateX(-50%);
+            font-family: "Roboto", sans-serif; font-size: 0.7em; text-transform: uppercase;
+            letter-spacing: 4px; color: #C99B9B; opacity: 0.6;
         }
 
         .intro-blurb {
-            font-family: "Roboto", sans-serif;
-            font-size: 1.45em;
-            line-height: 1.8;
-            color: #5D4F51;
-            margin-bottom: 40px;
-            font-weight: 300;
+            font-family: "Roboto", sans-serif; font-size: 1.6em; line-height: 1.7;
+            color: #5D4F51; margin-bottom: 40px; font-weight: 300;
         }
 
-        .intro-blurb strong {
-            color: #816B6E;
-            font-family: "Playfair Display", serif;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+        .intro-blurb strong { 
+            color: #816B6E; 
+            font-family: "Playfair Display", serif !important; 
+            font-weight: 800; 
+            letter-spacing: 0.5px; 
         }
 
         .up-to-link {
-            margin-bottom: 0;
-            font-family: "Playfair Display", serif;
-            font-weight: 900;
-            font-size: 2.2em;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #C99B9B !important;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            transition: all 0.4s ease;
+            margin-bottom: 0; font-family: "Playfair Display", serif !important; font-weight: 900;
+            font-size: 2.3em; letter-spacing: 1px; text-transform: uppercase;
+            color: #C99B9B !important; display: flex; align-items: center; gap: 15px;
+            cursor: pointer; transition: all 0.4s ease;
         }
+        .up-to-link:hover { color: #816B6E !important; transform: scale(1.03); }
 
-        .up-to-link:hover {
-            color: #816B6E !important;
-            transform: scale(1.03);
-        }
-
-        footer {
-            text-align: center; padding: 40px; color: #655C5B; font-size: 0.9em;
-            border-top: 1px solid #DDBDBE; 
-        }
+        footer { text-align: center; padding: 40px; color: #655C5B; font-size: 0.9em; border-top: 1px solid #DDBDBE; }
         .footer-table-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
         .footer-table { border-collapse: collapse; text-align: left; }
         .footer-table th { color: #816B6E; font-size: 1.1em; padding: 5px 10px 5px 0; }
