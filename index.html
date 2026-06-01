@@ -39,10 +39,9 @@
             padding: 17px 60px; position: relative; z-index: 1000;
         }
 
-        /* --- LOGO WEIGHT REDUCED --- */
         .logo { 
             font-family: "Playfair Display", serif !important; 
-            font-weight: 400; /* Changed from 700 to 400 */
+            font-weight: 400; 
             font-size: 1.5em; 
             letter-spacing: 1px; 
             color: #655C5B; 
@@ -64,7 +63,7 @@
         .dropdown-content a:hover { background-color: #E0E2DF; color: #816B6E !important; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* Headshot Area (850px Crop) */
+        /* Headshot Area */
         #headshot {
             margin-top: 0; position: relative;
             height: 850px; 
@@ -107,13 +106,13 @@
 
         .cta-button {
             display: inline-block; margin-top: 110px; padding: 25px 80px;
-            font-size: 2em; background-color: #C99B9B; color: white !important;                
+            font-size: 2em; background-color: #C99B9B; color: white !important;                 
             border: 2px solid #C99B9B; text-decoration: none;
             text-transform: capitalize; font-weight: bold; transition: all 0.4s ease;
         }
         .cta-button:hover { background-color: #816B6E; border-color: #816B6E; transform: rotate(-2deg); }
 
-        /* Photography 3D Card Section */
+        /* Photography Card Section */
         .intro-section {
             padding: 60px 80px 120px 80px;
             display: flex; justify-content: center;
@@ -125,7 +124,6 @@
             position: relative; border-radius: 60px 10px 60px 10px;
             box-shadow: 15px 15px 0px #816B6E; text-align: left;
             border-left: 8px solid #DDBDBE; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
         }
 
         .intro-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 25px 25px 0px #C99B9B; }
@@ -154,13 +152,47 @@
             letter-spacing: 0.5px; 
         }
 
+        /* Container to stack links cleanly */
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
         .up-to-link {
-            margin-bottom: 0; font-family: "Playfair Display", serif !important; font-weight: 900;
+            font-family: "Playfair Display", serif !important; font-weight: 900;
             font-size: 2.3em; letter-spacing: 1px; text-transform: uppercase;
             color: #C99B9B !important; display: flex; align-items: center; gap: 15px;
             cursor: pointer; transition: all 0.4s ease;
         }
         .up-to-link:hover { color: #816B6E !important; transform: scale(1.03); }
+
+        /* --- STABLE PINK MARKETING BUTTON CSS --- */
+        .marketing-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: #DDBDBE;
+            color: #655C5B !important;
+            border: 2px solid #DDBDBE;
+            border-radius: 50px;
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .marketing-btn:hover {
+            background-color: #C99B9B;
+            border-color: #C99B9B;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 155, 155, 0.4);
+        }
 
         footer { text-align: center; padding: 40px; color: #655C5B; font-size: 0.9em; border-top: 1px solid #DDBDBE; }
         .footer-table-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
@@ -223,9 +255,17 @@
                 <p class="intro-blurb">
                     As a <strong>dynamic visual designer and digital storyteller</strong>, I love bridging the gap between artistic vision and digital innovation.
                 </p>
-                <a href="https://cornelia-manda.github.io/projects/" class="up-to-link">
-                    click to see what I'm up to! &rarr;
-                </a>
+                
+                <!-- Action container holding both options safely -->
+                <div class="card-actions">
+                    <a href="https://cornelia-manda.github.io/projects/" class="up-to-link">
+                        click to see what I'm up to! &rarr;
+                    </a>
+
+                    <a href="https://cornelia-manda.github.io/marketing/" class="marketing-btn">
+                        Click for Marketing & Content Creation
+                    </a>
+                </div>
             </div>
         </section>
 
